@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: lightgray;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/41294/hero.jpg)
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.search-form {
+  width: 500px;
+  height: 40px;
+  margin: 50px auto;
+  background: #444;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border: 1px solid #a7a8a8;
+}
+
+input,
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+input {
+  width: 370px;
+  padding: 10px 5px;
+  float: left;
+  color: #ccc;
+  border: 0;
+  background: transparent;
+  border-radius: 4px 0 0 4px;
+}
+
+input:focus {
+  outline: 0;
+  background: transparent;
+}
+
+button {
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 120px;
+  color: #a7a8a8;
+  background: transparent;
+  border-left: 1px solid #a7a8a8;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+  background-color: #fff;
+  color: #444;
+}
+
+button:active {
+  box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+}
+
+button:focus {
+  outline: 0;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  object-fit: cover;
+}
+
+.gallery-item {
+  border: 1px solid #8f9090;
+  border-radius: 4px;
+}
+
+.gallery-figure {
+  margin: 0;
+}
+
+.img-content-wrapper {
+  padding-block: 4px;
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+}
+
+.img-content-wrapper > li {
+  color: #a7a8a8;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+}
+
+.img-content-wrapper > li > span {
+  text-align: center;
+  display: block;
+  color: #a7a8a8;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.sl-wrapper {
+  background-color: #2e2f42cc;
+}
+
+.sl-image img {
+  border-radius: 4px 4px;
+}
+
+.sl-caption {
+  border-radius: 0 0 4px 4px;
+}
+
+.sl-counter,
+.sl-close,
+.sl-prev,
+.sl-next {
+  color: #ffff !important;
+}
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  grid-area: 1/1;
+  --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 12px 12px;
+  animation: l12 1s infinite;
+}
+
+.loader::before {
+  margin: 4px;
+  filter: hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear;
+}
+
+@keyframes l12 {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
