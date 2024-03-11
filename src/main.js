@@ -12,6 +12,8 @@ let queryString = '';
 let currentPage = 1;
 let evtType = '';
 
+const IMAGE_MAX_COUNT = 15;
+
 const form = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more-btn');
@@ -107,7 +109,7 @@ function validateGalleryData(galleryData) {
 }
 
 function showHideBtn(imagesCount) {
-  if (imagesCount <= 15) {
+  if (imagesCount <= IMAGE_MAX_COUNT) {
     loadMoreBtn.classList.remove('visible');
     showInfoMessage(MESSAGES.endOfSearch, MESSAGES_BG_COLORS.blue);
     return;
